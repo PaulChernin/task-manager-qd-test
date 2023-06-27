@@ -22,13 +22,14 @@
             >
                 <input
                     v-model="task.text"
-                    @update:modelValue="changeTask(task)"
+                    @input="changeTask(task)"
                     type="text"
                     :style="{textDecoration: task.completed ? 'line-through' : 'none'}"
                 >
                 <input
                     v-model="task.completed"
                     type="checkbox"
+                    @change="changeTask(task)"
                 >
                 <button @click="removeTask(task)">Удалить</button>
             </li>

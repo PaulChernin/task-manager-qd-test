@@ -20,7 +20,7 @@ const store = createStore({
             state.tasks = [newTask, ...state.tasks]
         },
         changeTask(state, newTask) {
-            const task = state.tasks.find(t => t.id === task.id)
+            const task = state.tasks.find(t => t.id === newTask.id)
             task.text = newTask.text
             task.completed = newTask.completed
         },
