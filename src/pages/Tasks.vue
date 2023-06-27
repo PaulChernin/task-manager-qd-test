@@ -10,7 +10,7 @@
             <button
                 type="submit"
                 @click="addTask"
-                :disabled="!newTaskText"
+                :disabled="!newTaskText.trim()"
             >
                 Добавить
             </button>
@@ -25,6 +25,7 @@
                     @input="changeTask(task)"
                     type="text"
                     :style="{textDecoration: task.completed ? 'line-through' : 'none'}"
+                    :class="{error: !task.text.trim()}"
                 >
                 <input
                     v-model="task.completed"
@@ -45,7 +46,7 @@ export default {
     methods: {
         addTask() {
             this.$store.commit('createTask', {
-                text: this.newTaskText,
+                text: this.newTaskText.trim(),
                 completed: false
             })
 

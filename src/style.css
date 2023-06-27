@@ -57,6 +57,10 @@ input[type=text] {
     flex-grow: 1;
 }
 
+input.error {
+    border-bottom: 1px solid red;
+}
+
 input:focus {
     outline: none;
 }
