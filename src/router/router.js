@@ -1,5 +1,5 @@
-import Home from '../pages/Home.vue'
-import Tasks from '../pages/Tasks.vue'
+import Home from '../pages/Home/Home.vue'
+import Tasks from '../pages/Tasks/Tasks.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
