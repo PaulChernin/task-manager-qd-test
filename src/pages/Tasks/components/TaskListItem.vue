@@ -1,12 +1,11 @@
 <template>
     <li>
-        <input
+        <MyInput
             v-model="task.text"
+            :isValid="isValid"
             @input="changeTask(task)"
-            type="text"
-            :style="{textDecoration: task.completed ? 'line-through' : 'none'}"
-            :class="{error: !isValid}"
-        >
+            :inputStyle="task.completed ? 'text-decoration: line-through;' : ''"
+        />
         <input
             v-model="task.completed"
             type="checkbox"
@@ -17,6 +16,8 @@
 </template>
 
 <script>
+import MyInput from '../../../components/MyInput.vue'
+
 export default {
     props: {
         task: Object
@@ -33,10 +34,11 @@ export default {
         isValid() {
             return !!this.task.text.trim()
         }
-    }
+    },
+    components: { MyInput }
 }
 </script>
 
-<style lang="sass">
+<style scoped>
 
 </style>

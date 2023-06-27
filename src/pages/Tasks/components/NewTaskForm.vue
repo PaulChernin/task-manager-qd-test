@@ -1,11 +1,11 @@
 <template>
     <div>
         <form>
-            <input
+            <MyInput
                 v-model="newTaskText"
                 type="text"
                 placeholder="Новая задача"
-            >
+            />
             <button
                 type="submit"
                 @click="addTask"
@@ -18,22 +18,24 @@
 </template>
 
 <script>
+import MyInput from '../../../components/MyInput.vue'
+
 export default {
     methods: {
         addTask() {
-            this.$store.commit('createTask', {
+            this.$store.commit("createTask", {
                 text: this.newTaskText.trim(),
                 completed: false
-            })
-
-            this.newTaskText = ''
+            });
+            this.newTaskText = ""
         },
     },
     data() {
         return {
-            newTaskText: ''
+            newTaskText: ""
         }
-    }
+    },
+    components: { MyInput }
 }
 </script>
 

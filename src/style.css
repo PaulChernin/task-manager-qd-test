@@ -47,25 +47,8 @@ button:hover {
     background-color: #eee;
 }
 
-input {
-    border: none;
-    border-bottom: 1px solid #333;
-    padding: 10px;
-}
-
-input[type=text] {
-    flex-grow: 1;
-}
-
-input.error {
-    border-bottom: 1px solid red;
-}
-
-input:focus {
-    outline: none;
-}
-
 input[type=checkbox] {
+    min-width: 16px;
     width: 16px;
     height: 16px;
 }
